@@ -21,7 +21,7 @@ export function PageHero({
 }) {
   return (
     <section className="bg-jamogo-green-50">
-      <Container className="grid items-center gap-12 py-16 md:grid-cols-2 md:py-24">
+      <Container className="grid items-start gap-12 py-16 md:grid-cols-2 md:py-24">
         <div>
           {eyebrow && <Pill>{eyebrow}</Pill>}
           <h1 className="mt-4 font-heading text-4xl font-bold tracking-tight text-jamogo-ink-900 sm:text-5xl">

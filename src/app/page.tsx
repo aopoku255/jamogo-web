@@ -1,12 +1,12 @@
 import Link from "next/link";
 import { Container } from "@/components/Container";
 import { Pill } from "@/components/Pill";
-import { Button } from "@/components/Button";
 import { ImagePlaceholder } from "@/components/ImagePlaceholder";
 import { SectionHeading } from "@/components/SectionHeading";
 import { FeatureCard } from "@/components/FeatureCard";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { CtaBanner } from "@/components/CtaBanner";
+import { HeroSwiper, type HeroSlide } from "@/components/HeroSwiper";
 import {
   TagIcon,
   UsersIcon,
@@ -20,41 +20,59 @@ import { CITIES } from "@/data/cities";
 import { FAQ } from "@/data/faq";
 import { NOTIFY_MAILTO } from "@/lib/site";
 
+const HERO_SLIDES: HeroSlide[] = [
+  {
+    tab: "Fare",
+    highlight: "Name your fare.",
+    rest: "Ride smarter.",
+    description:
+      "Jamogo matches you with drivers going your way. Set the price you want to pay, ride solo or share to save, and get there safely.",
+    cta: { label: "Get notified at launch", href: NOTIFY_MAILTO },
+    note: "We're not live on the App Store or Google Play yet.",
+    imageLabel: "Phone mockup - app home screen with a fare-offer card",
+  },
+  {
+    tab: "Ride",
+    highlight: "Solo or pool -",
+    rest: "you choose.",
+    description:
+      "Ride private for full control, or share your route with riders headed the same way and save up to 40% on fare.",
+    cta: { label: "See how it works", href: "/ride" },
+    imageLabel: "Screenshot - solo vs pool ride selection screen",
+  },
+  {
+    tab: "Drive",
+    highlight: "Drive & earn",
+    rest: "on your schedule.",
+    description:
+      "Accept the offers that work for you - no forced dispatch, no fixed schedule. Drive when it suits you.",
+    cta: { label: "Learn about driving", href: "/drive" },
+    imageLabel: "Photo - driver accepting a fare offer on the road",
+  },
+  {
+    tab: "Safety",
+    highlight: "Your safety is",
+    rest: "non-negotiable.",
+    description:
+      "Verified driver IDs, live trip sharing with trusted contacts, and one-tap SOS on every ride.",
+    cta: { label: "See safety features", href: "/safety" },
+    imageLabel: "Illustration - driver ID check and live trip sharing",
+  },
+  {
+    tab: "Cities",
+    highlight: "Launching city by city",
+    rest: "across Ghana.",
+    description:
+      "We're starting in Kumasi and rolling out to more regional capitals as we grow.",
+    cta: { label: "See the full city list", href: "/cities" },
+    imageLabel: "Map illustration - Ghana cities launch rollout",
+  },
+];
+
 export default function Home() {
   return (
     <>
-      {/* Hero */}
-      <section className="bg-jamogo-green-50">
-        <Container className="grid items-center gap-12 py-16 md:grid-cols-2 md:py-24">
-          <div>
-            <Pill>Now in Ghana 🇬🇭</Pill>
-            <h1 className="mt-4 font-heading text-4xl font-bold leading-tight tracking-tight text-jamogo-ink-900 sm:text-5xl">
-              Name your fare.
-              <br />
-              Ride smarter.
-            </h1>
-            <p className="mt-5 max-w-md text-lg text-jamogo-gray-700">
-              Jamogo matches you with drivers going your way. Set the price
-              you want to pay, ride solo or share to save, and get there
-              safely.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Button href={NOTIFY_MAILTO}>Get notified at launch</Button>
-              <Button href="/ride" variant="secondary">
-                See how it works
-              </Button>
-            </div>
-            <p className="mt-4 text-sm text-jamogo-gray-400">
-              We&apos;re not live on the App Store or Google Play yet.
-            </p>
-          </div>
-          <ImagePlaceholder
-            width={640}
-            height={1280}
-            label="Phone mockup - app home screen with a fare-offer card"
-          />
-        </Container>
-      </section>
+      <HeroSwiper slides={HERO_SLIDES} />
 
       {/* Services */}
       <section className="py-20">

@@ -13,9 +13,9 @@ export function Footer() {
           <p className="mt-4 max-w-xs text-sm text-jamogo-gray-500">
             {SITE.description}
           </p>
-          <p className="mt-4 text-sm font-medium text-jamogo-green-600">
+          {/* <p className="mt-4 text-sm font-medium text-jamogo-green-600">
             Made for Ghana 🇬🇭
-          </p>
+          </p> */}
         </div>
 
         <div>

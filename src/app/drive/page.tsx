@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Container } from "@/components/Container";
-import { PageHero } from "@/components/PageHero";
+import { PageHeroBanner } from "@/components/PageHeroBanner";
 import { SectionHeading } from "@/components/SectionHeading";
 import { FeatureCard } from "@/components/FeatureCard";
 import { ImagePlaceholder } from "@/components/ImagePlaceholder";
@@ -33,16 +33,12 @@ const REQUIREMENTS = [
 export default function DrivePage() {
   return (
     <>
-      <PageHero
-        eyebrow="For drivers"
-        title="Drive with Jamogo. Earn on your terms."
+      <PageHeroBanner
+        highlight="Drive with Jamogo."
+        rest="Earn on your terms."
         description="Set your own hours, accept the fare offers that work for you, and get paid straight to mobile money - no forced dispatch, no hidden commission surprises."
-        cta={
-          <Button href={DRIVER_MAILTO}>Sign up as a driver</Button>
-        }
-        imageLabel="Phone mockup - driver app with incoming ride offer"
-        imageWidth={640}
-        imageHeight={1280}
+        cta={<Button href={DRIVER_MAILTO}>Sign up as a driver</Button>}
+        imageLabel="Photo - driver accepting a fare offer on the road"
       />
 
       {/* Why drive */}

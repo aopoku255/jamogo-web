@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Container } from "@/components/Container";
-import { PageHero } from "@/components/PageHero";
+import { PageHeroBanner } from "@/components/PageHeroBanner";
 import { SectionHeading } from "@/components/SectionHeading";
 import { FeatureCard } from "@/components/FeatureCard";
 import { ImagePlaceholder } from "@/components/ImagePlaceholder";
@@ -25,9 +25,9 @@ export const metadata: Metadata = {
 export default function RidePage() {
   return (
     <>
-      <PageHero
-        eyebrow="For riders"
-        title="Ride your way, at your price"
+      <PageHeroBanner
+        highlight="Ride your way,"
+        rest="at your price."
         description="Tell us where you're headed, offer what you're willing to pay, and get matched with a nearby driver - solo or shared."
         cta={
           <>
@@ -37,9 +37,7 @@ export default function RidePage() {
             </Button>
           </>
         }
-        imageLabel="Phone mockup - ride request screen with fare offer"
-        imageWidth={640}
-        imageHeight={1280}
+        imageLabel="Photo - rider hailing a Jamogo car in Kumasi"
       />
 
       {/* Solo vs Pool */}
