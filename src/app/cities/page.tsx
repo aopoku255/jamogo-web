@@ -5,7 +5,7 @@ import { ImagePlaceholder } from "@/components/ImagePlaceholder";
 import { CtaBanner } from "@/components/CtaBanner";
 import { Button } from "@/components/Button";
 import { CITIES } from "@/data/cities";
-import { NOTIFY_MAILTO, SITE } from "@/lib/site";
+import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Cities",
@@ -26,7 +26,7 @@ export default function CitiesPage() {
         eyebrow="Where we ride"
         title="Available in major cities across Ghana"
         description="We're launching first in Kumasi and expanding to regional capitals as we grow. Don't see your city yet? Let us know and we'll keep you posted."
-        cta={<Button href={NOTIFY_MAILTO}>Get notified at launch</Button>}
+        cta={<Button href="/notify">Get notified at launch</Button>}
         imageLabel="Photo - Kumasi city skyline or street scene"
         imageWidth={1120}
         imageHeight={840}

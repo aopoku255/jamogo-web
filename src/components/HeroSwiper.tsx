@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useRef, useState } from "react";
+import Image from "next/image";
 import { Button } from "./Button";
 import { ImagePlaceholder } from "./ImagePlaceholder";
 
@@ -15,6 +16,8 @@ export type HeroSlide = {
   cta: { label: string; href: string };
   note?: string;
   imageLabel: string;
+  /** Real image to show instead of the placeholder, e.g. "/images/hero-fare.png". */
+  image?: string;
 };
 
 const AUTOPLAY_MS = 6000;
@@ -61,13 +64,24 @@ export function HeroSwiper({ slides }: { slides: HeroSlide[] }) {
               }`}
               aria-hidden={i !== index}
             >
-              <ImagePlaceholder
-                bare
-                width={1920}
-                height={1080}
-                label={slide.imageLabel}
-                className="absolute inset-0 h-full w-full"
-              />
+              {slide.image ? (
+                <Image
+                  src={slide.image}
+                  alt={slide.imageLabel}
+                  fill
+                  priority={i === 0}
+                  sizes="100vw"
+                  className="object-cover"
+                />
+              ) : (
+                <ImagePlaceholder
+                  bare
+                  width={1920}
+                  height={1080}
+                  label={slide.imageLabel}
+                  className="absolute inset-0 h-full w-full"
+                />
+              )}
               <div className="absolute inset-0 bg-linear-to-t from-jamogo-ink-900 via-jamogo-ink-900/70 to-jamogo-ink-900/20" />
               <div className="relative z-10 mx-auto flex h-full w-full max-w-6xl flex-col justify-center px-6 pb-16">
                 <h1 className="max-w-2xl font-heading text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-6xl">

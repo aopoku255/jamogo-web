@@ -14,7 +14,6 @@ import {
   WalletIcon,
   UsersIcon,
 } from "@/components/icons";
-import { NOTIFY_MAILTO } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Ride",
@@ -31,7 +30,7 @@ export default function RidePage() {
         description="Tell us where you're headed, offer what you're willing to pay, and get matched with a nearby driver - solo or shared."
         cta={
           <>
-            <Button href={NOTIFY_MAILTO}>Get notified at launch</Button>
+            <Button href="/notify">Get notified at launch</Button>
             <Button href="#how-it-works" variant="secondary">
               How it works
             </Button>

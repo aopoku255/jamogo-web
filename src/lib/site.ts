@@ -11,13 +11,6 @@ export const SITE = {
   },
 } as const;
 
-export const NOTIFY_MAILTO =
-  `mailto:${SITE.emails.hello}?subject=${encodeURIComponent(
-    "Notify me when Jamogo launches"
-  )}&body=${encodeURIComponent(
-    "Hi Jamogo,\n\nPlease let me know when the app launches.\n\nMy email: "
-  )}`;
-
 export const DRIVER_MAILTO =
   `mailto:${SITE.emails.hello}?subject=${encodeURIComponent(
     "I want to drive with Jamogo"

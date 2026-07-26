@@ -16,7 +16,6 @@ import {
   ClockIcon,
   TagIcon,
 } from "@/components/icons";
-import { NOTIFY_MAILTO } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Safety",
@@ -82,7 +81,7 @@ export default function SafetyPage() {
         eyebrow="Safety"
         title="Your safety is non-negotiable"
         description="We put real effort into making every ride with Jamogo safe - for riders, drivers, and co-riders, every time."
-        cta={<Button href={NOTIFY_MAILTO}>Get notified at launch</Button>}
+        cta={<Button href="/notify">Get notified at launch</Button>}
         imageLabel="Illustration - verified driver and rider safety check"
         imageWidth={960}
         imageHeight={720}

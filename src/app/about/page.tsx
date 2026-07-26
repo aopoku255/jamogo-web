@@ -7,7 +7,6 @@ import { ImagePlaceholder } from "@/components/ImagePlaceholder";
 import { CtaBanner } from "@/components/CtaBanner";
 import { Button } from "@/components/Button";
 import { TagIcon, ShieldIcon, UsersIcon } from "@/components/icons";
-import { NOTIFY_MAILTO } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About",
@@ -22,7 +21,7 @@ export default function AboutPage() {
         eyebrow="About us"
         title="Jack make we go."
         description="Jamogo takes its name from the Ghanaian pidgin for 'let's go, together.' We're building a fairer way to move around Ghana - one where you set the price and choose who you ride with."
-        cta={<Button href={NOTIFY_MAILTO}>Get notified at launch</Button>}
+        cta={<Button href="/notify">Get notified at launch</Button>}
         imageLabel="Photo - riders and driver in Kumasi street"
         imageWidth={1120}
         imageHeight={840}

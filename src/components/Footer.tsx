@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Container } from "./Container";
+import { CookiePreferencesButton } from "./CookiePreferencesButton";
 import { FOOTER_LINKS } from "@/data/nav";
 import { SITE } from "@/lib/site";
 
@@ -51,6 +52,9 @@ export function Footer() {
                 </Link>
               </li>
             ))}
+            <li>
+              <CookiePreferencesButton />
+            </li>
           </ul>
         </div>
       </Container>

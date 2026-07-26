@@ -7,7 +7,6 @@ import { useEffect, useState } from "react";
 import { Container } from "./Container";
 import { Button } from "./Button";
 import { NAV_LINKS } from "@/data/nav";
-import { NOTIFY_MAILTO } from "@/lib/site";
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -68,7 +67,7 @@ export function Header() {
         </nav>
 
         <div className="hidden md:block">
-          <Button href={NOTIFY_MAILTO} variant="primary">
+          <Button href="/notify" variant="primary">
             Get the App
           </Button>
         </div>
@@ -107,7 +106,7 @@ export function Header() {
                 {link.label}
               </Link>
             ))}
-            <Button href={NOTIFY_MAILTO} variant="primary" className="mt-3 w-full">
+            <Button href="/notify" variant="primary" className="mt-3 w-full">
               Get the App
             </Button>
           </Container>

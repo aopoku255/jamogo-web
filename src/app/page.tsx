@@ -18,7 +18,6 @@ import {
 } from "@/components/icons";
 import { CITIES } from "@/data/cities";
 import { FAQ } from "@/data/faq";
-import { NOTIFY_MAILTO } from "@/lib/site";
 
 const HERO_SLIDES: HeroSlide[] = [
   {
@@ -27,9 +26,10 @@ const HERO_SLIDES: HeroSlide[] = [
     rest: "Ride smarter.",
     description:
       "Jamogo matches you with drivers going your way. Set the price you want to pay, ride solo or share to save, and get there safely.",
-    cta: { label: "Get notified at launch", href: NOTIFY_MAILTO },
+    cta: { label: "Get notified at launch", href: "/notify" },
     note: "We're not live on the App Store or Google Play yet.",
     imageLabel: "Phone mockup - app home screen with a fare-offer card",
+    image: "/images/hero-fare.png",
   },
   {
     tab: "Ride",

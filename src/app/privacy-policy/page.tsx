@@ -17,6 +17,7 @@ const TOC = [
   { id: "payments", label: "Payments & wallet" },
   { id: "retention", label: "Data retention" },
   { id: "security", label: "Security" },
+  { id: "cookies", label: "Cookies" },
   { id: "your-rights", label: "Your rights & choices" },
   { id: "children", label: "Children's privacy" },
   { id: "changes", label: "Changes to this policy" },
@@ -181,7 +182,30 @@ export default function PrivacyPolicyPage() {
         </p>
       </LegalSection>
 
-      <LegalSection id="your-rights" title="9. Your rights & choices">
+      <LegalSection id="cookies" title="9. Cookies">
+        <p>
+          Our website uses a small number of cookies and similar
+          technologies:
+        </p>
+        <ul>
+          <li>
+            <strong>Necessary cookies:</strong> required for the website to
+            function correctly, such as remembering your cookie
+            preferences. These cannot be switched off.
+          </li>
+          <li>
+            <strong>Analytics cookies (optional):</strong> help us
+            understand how visitors use our website so we can improve it.
+            These are only set if you consent to them.
+          </li>
+        </ul>
+        <p>
+          You can change your cookie preferences at any time using the
+          &quot;Manage cookies&quot; link in the footer of our website.
+        </p>
+      </LegalSection>
+
+      <LegalSection id="your-rights" title="10. Your rights & choices">
         <ul>
           <li>Access, correct, or update your account information from within the app.</li>
           <li>
@@ -194,7 +218,7 @@ export default function PrivacyPolicyPage() {
         <p>To exercise these rights, contact us using the details below.</p>
       </LegalSection>
 
-      <LegalSection id="children" title="10. Children's privacy">
+      <LegalSection id="children" title="11. Children's privacy">
         <p>
           The Service is not intended for anyone under the age of 18. We do
           not knowingly collect personal information from children. If you
@@ -203,7 +227,7 @@ export default function PrivacyPolicyPage() {
         </p>
       </LegalSection>
 
-      <LegalSection id="changes" title="11. Changes to this policy">
+      <LegalSection id="changes" title="12. Changes to this policy">
         <p>
           We may update this Privacy Policy from time to time. We will
           notify you of material changes through the app or by other
@@ -213,7 +237,7 @@ export default function PrivacyPolicyPage() {
         </p>
       </LegalSection>
 
-      <LegalSection id="contact" title="12. Contact us">
+      <LegalSection id="contact" title="13. Contact us">
         <p>
           If you have questions about this Privacy Policy or how we handle
           your information, contact us at{" "}

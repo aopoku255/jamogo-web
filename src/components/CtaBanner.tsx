@@ -1,12 +1,11 @@
 import { Container } from "./Container";
 import { Button } from "./Button";
-import { NOTIFY_MAILTO } from "@/lib/site";
 
 export function CtaBanner({
   title = "We're not live in Ghana just yet",
   description = "Leave your email and we'll let you know the moment Jamogo launches in your city.",
   ctaLabel = "Get notified at launch",
-  ctaHref = NOTIFY_MAILTO,
+  ctaHref = "/notify",
 }: {
   title?: string;
   description?: string;
