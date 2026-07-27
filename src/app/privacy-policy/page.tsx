@@ -1,12 +1,13 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { LegalPage, LegalSection } from "@/components/LegalPage";
 import { SITE } from "@/lib/site";
+import { buildMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
   title: "Privacy Policy",
   description: "How Jamogo collects, uses, and protects your data.",
-};
+  path: "/privacy-policy",
+});
 
 const TOC = [
   { id: "information-we-collect", label: "Information we collect" },

@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { Container } from "@/components/Container";
 import { PageHero } from "@/components/PageHero";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -7,12 +6,14 @@ import { ImagePlaceholder } from "@/components/ImagePlaceholder";
 import { CtaBanner } from "@/components/CtaBanner";
 import { Button } from "@/components/Button";
 import { TagIcon, ShieldIcon, UsersIcon } from "@/components/icons";
+import { buildMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
   title: "About",
   description:
     "Jamogo - \"Jack make we go\" - is a ride-pooling app built for Ghana, where riders name their fare and share the road to save.",
-};
+  path: "/about",
+});
 
 export default function AboutPage() {
   return (

@@ -1,13 +1,14 @@
-import type { Metadata } from "next";
 import { Container } from "@/components/Container";
 import { Pill } from "@/components/Pill";
 import { NotifyForm } from "@/components/NotifyForm";
+import { buildMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
   title: "Get notified",
   description:
     "Leave your details and we'll let you know the moment Jamogo launches in your city.",
-};
+  path: "/notify",
+});
 
 export default function NotifyPage() {
   return (

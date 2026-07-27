@@ -1,10 +1,18 @@
 import { ImageResponse } from "next/og";
+import { join } from "node:path";
+import { readFile } from "node:fs/promises";
 import { SITE } from "@/lib/site";
 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-export default function Image() {
+export default async function Image() {
+  const logoData = await readFile(
+    join(process.cwd(), "public/brand/logo.png"),
+    "base64",
+  );
+  const logoSrc = `data:image/png;base64,${logoData}`;
+
   return new ImageResponse(
     (
       <div
@@ -18,43 +26,7 @@ export default function Image() {
           background: "#EEF9F1",
         }}
       >
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: 16,
-          }}
-        >
-          <div
-            style={{
-              width: 76,
-              height: 76,
-              borderRadius: 24,
-              background: "#1FA84C",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <div
-              style={{
-                width: 30,
-                height: 30,
-                borderRadius: "50%",
-                border: "8px solid white",
-              }}
-            />
-          </div>
-          <div
-            style={{
-              fontSize: 88,
-              fontWeight: 800,
-              color: "#17853D",
-            }}
-          >
-            jamogo
-          </div>
-        </div>
+        <img src={logoSrc} alt={SITE.name} height={140} />
         <div
           style={{
             marginTop: 28,

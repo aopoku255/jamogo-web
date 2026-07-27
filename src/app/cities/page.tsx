@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { Container } from "@/components/Container";
 import { PageHero } from "@/components/PageHero";
 import { ImagePlaceholder } from "@/components/ImagePlaceholder";
@@ -6,12 +5,14 @@ import { CtaBanner } from "@/components/CtaBanner";
 import { Button } from "@/components/Button";
 import { CITIES } from "@/data/cities";
 import { SITE } from "@/lib/site";
+import { buildMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
   title: "Cities",
   description:
     "Jamogo is launching first in Kumasi, with more cities across Ghana to follow.",
-};
+  path: "/cities",
+});
 
 const requestCityMailto = `mailto:${SITE.emails.hello}?subject=${encodeURIComponent(
   "Bring Jamogo to my city"

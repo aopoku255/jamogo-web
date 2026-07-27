@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import Image from "next/image";
 import { Container } from "@/components/Container";
 import { PageHeroBanner } from "@/components/PageHeroBanner";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -14,12 +14,14 @@ import {
   WalletIcon,
   UsersIcon,
 } from "@/components/icons";
+import { buildMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
   title: "Ride",
   description:
     "Name your fare, ride solo or pool with others heading your way, and pay with mobile money. This is how riding with Jamogo works.",
-};
+  path: "/ride",
+});
 
 export default function RidePage() {
   return (
@@ -36,7 +38,8 @@ export default function RidePage() {
             </Button>
           </>
         }
-        imageLabel="Photo - rider hailing a Jamogo car in Kumasi"
+        imageLabel="Photo - phone showing ride offers to choose from"
+        image="/images/ride-share.png"
       />
 
       {/* Solo vs Pool */}
@@ -98,11 +101,18 @@ export default function RidePage() {
             description="You're always in control of what you pay."
           />
           <div className="mt-12 grid items-center gap-12 md:grid-cols-2">
-            <ImagePlaceholder
-              width={720}
-              height={960}
-              label="Screenshot - driver offer and counter-offer chat"
-            />
+            <div
+              className="relative w-full overflow-hidden rounded-2xl"
+              style={{ aspectRatio: "776 / 1352" }}
+            >
+              <Image
+                src="/images/counter-fare.png"
+                alt="Screenshot - driver offer and counter-offer chat"
+                fill
+                className="object-cover"
+                sizes="(min-width: 768px) 360px, 100vw"
+              />
+            </div>
             <ol className="space-y-8">
               {[
                 {

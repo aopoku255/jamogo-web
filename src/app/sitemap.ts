@@ -5,6 +5,7 @@ const ROUTES = [
   { path: "", priority: 1, changeFrequency: "weekly" },
   { path: "/ride", priority: 0.8, changeFrequency: "monthly" },
   { path: "/drive", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/notify", priority: 0.5, changeFrequency: "yearly" },
   { path: "/safety", priority: 0.7, changeFrequency: "monthly" },
   { path: "/cities", priority: 0.7, changeFrequency: "monthly" },
   { path: "/about", priority: 0.6, changeFrequency: "monthly" },

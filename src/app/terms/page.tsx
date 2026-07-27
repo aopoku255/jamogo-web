@@ -1,11 +1,12 @@
-import type { Metadata } from "next";
 import { LegalPage, LegalSection } from "@/components/LegalPage";
 import { SITE } from "@/lib/site";
+import { buildMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
   title: "Terms & Conditions",
   description: "The terms that govern your use of the Jamogo app and website.",
-};
+  path: "/terms",
+});
 
 const TOC = [
   { id: "eligibility", label: "Eligibility & accounts" },

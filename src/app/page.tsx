@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Container } from "@/components/Container";
 import { Pill } from "@/components/Pill";
 import { ImagePlaceholder } from "@/components/ImagePlaceholder";
@@ -28,7 +29,7 @@ const HERO_SLIDES: HeroSlide[] = [
       "Jamogo matches you with drivers going your way. Set the price you want to pay, ride solo or share to save, and get there safely.",
     cta: { label: "Get notified at launch", href: "/notify" },
     note: "We're not live on the App Store or Google Play yet.",
-    imageLabel: "Phone mockup - app home screen with a fare-offer card",
+    imageLabel: "Photo - riders sharing a Jamogo trip, checking their phones",
     image: "/images/hero-fare.png",
   },
   {
@@ -38,7 +39,8 @@ const HERO_SLIDES: HeroSlide[] = [
     description:
       "Ride private for full control, or share your route with riders headed the same way and save up to 40% on fare.",
     cta: { label: "See how it works", href: "/ride" },
-    imageLabel: "Screenshot - solo vs pool ride selection screen",
+    imageLabel: "Photo - riders sharing a pool trip together",
+    image: "/images/solo-share.png",
   },
   {
     tab: "Drive",
@@ -47,7 +49,8 @@ const HERO_SLIDES: HeroSlide[] = [
     description:
       "Accept the offers that work for you - no forced dispatch, no fixed schedule. Drive when it suits you.",
     cta: { label: "Learn about driving", href: "/drive" },
-    imageLabel: "Photo - driver accepting a fare offer on the road",
+    imageLabel: "Photo - driver taking a call from the driver's seat",
+    image: "/images/drive.png",
   },
   {
     tab: "Safety",
@@ -56,16 +59,8 @@ const HERO_SLIDES: HeroSlide[] = [
     description:
       "Verified driver IDs, live trip sharing with trusted contacts, and one-tap SOS on every ride.",
     cta: { label: "See safety features", href: "/safety" },
-    imageLabel: "Illustration - driver ID check and live trip sharing",
-  },
-  {
-    tab: "Cities",
-    highlight: "Launching city by city",
-    rest: "across Ghana.",
-    description:
-      "We're starting in Kumasi and rolling out to more regional capitals as we grow.",
-    cta: { label: "See the full city list", href: "/cities" },
-    imageLabel: "Map illustration - Ghana cities launch rollout",
+    imageLabel: "Photo - the Jamogo safety team at work",
+    image: "/images/safty-team.png",
   },
 ];
 
@@ -152,12 +147,18 @@ export default function Home() {
       {/* Safety teaser */}
       <section className="py-20">
         <Container className="grid items-center gap-12 md:grid-cols-2">
-          <ImagePlaceholder
-            width={960}
-            height={720}
-            label="Illustration - driver ID check and live trip sharing"
-            className="md:order-2"
-          />
+          <div
+            className="relative w-full overflow-hidden rounded-2xl md:order-2"
+            style={{ aspectRatio: "960 / 720" }}
+          >
+            <Image
+              src="/images/safty-illustration.png"
+              alt="Illustration - driver ID check and live trip sharing"
+              fill
+              className="object-cover"
+              sizes="(min-width: 768px) 480px, 100vw"
+            />
+          </div>
           <div className="md:order-1">
             <Pill>Safety</Pill>
             <h2 className="mt-4 font-heading text-3xl font-bold tracking-tight text-jamogo-ink-900 sm:text-4xl">

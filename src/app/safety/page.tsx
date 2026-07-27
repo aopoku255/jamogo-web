@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { Container } from "@/components/Container";
 import { PageHero } from "@/components/PageHero";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -16,12 +15,14 @@ import {
   ClockIcon,
   TagIcon,
 } from "@/components/icons";
+import { buildMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
   title: "Safety",
   description:
     "Verified drivers, live trip sharing, one-tap SOS, and more - the safety features built into every Jamogo ride.",
-};
+  path: "/safety",
+});
 
 const FEATURES = [
   {

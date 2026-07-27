@@ -24,6 +24,7 @@ export const metadata: Metadata = {
     template: `%s - ${SITE.name}`,
   },
   description: SITE.description,
+  alternates: { canonical: "/" },
   icons: {
     icon: [
       { url: "/favicon-16.png", sizes: "16x16", type: "image/png" },

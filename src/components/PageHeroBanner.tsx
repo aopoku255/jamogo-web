@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ImagePlaceholder } from "./ImagePlaceholder";
 
 export function PageHeroBanner({
@@ -7,6 +8,7 @@ export function PageHeroBanner({
   cta,
   note,
   imageLabel,
+  image,
 }: {
   /** Highlighted first line of the headline (gets the marker background). */
   highlight: string;
@@ -16,17 +18,30 @@ export function PageHeroBanner({
   cta?: React.ReactNode;
   note?: string;
   imageLabel: string;
+  /** Real image to show instead of the placeholder, e.g. "/images/ride-share.png". */
+  image?: string;
 }) {
   return (
     <section className="relative isolate overflow-hidden bg-jamogo-ink-900">
       <div className="relative h-140 sm:h-155 md:h-175 lg:h-190">
-        <ImagePlaceholder
-          bare
-          width={1920}
-          height={1080}
-          label={imageLabel}
-          className="absolute inset-0 h-full w-full"
-        />
+        {image ? (
+          <Image
+            src={image}
+            alt={imageLabel}
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
+        ) : (
+          <ImagePlaceholder
+            bare
+            width={1920}
+            height={1080}
+            label={imageLabel}
+            className="absolute inset-0 h-full w-full"
+          />
+        )}
         <div className="absolute inset-0 bg-linear-to-t from-jamogo-ink-900 via-jamogo-ink-900/70 to-jamogo-ink-900/20" />
         <div className="relative z-10 mx-auto flex h-full w-full max-w-6xl flex-col justify-center px-6 pb-16">
           <h1 className="max-w-2xl font-heading text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-6xl">

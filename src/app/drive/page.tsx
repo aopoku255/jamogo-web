@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { Container } from "@/components/Container";
 import { PageHeroBanner } from "@/components/PageHeroBanner";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -15,12 +14,14 @@ import {
   CarIcon,
 } from "@/components/icons";
 import { DRIVER_MAILTO } from "@/lib/site";
+import { buildMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
   title: "Drive",
   description:
     "Drive with Jamogo and earn on your terms. Set your own hours, accept the offers that work for you, and get paid straight to mobile money.",
-};
+  path: "/drive",
+});
 
 const REQUIREMENTS = [
   "Valid Ghanaian driving licence, held for at least 1 year",
@@ -38,7 +39,8 @@ export default function DrivePage() {
         rest="Earn on your terms."
         description="Set your own hours, accept the fare offers that work for you, and get paid straight to mobile money - no forced dispatch, no hidden commission surprises."
         cta={<Button href={DRIVER_MAILTO}>Sign up as a driver</Button>}
-        imageLabel="Photo - driver accepting a fare offer on the road"
+        imageLabel="Photo - smiling Jamogo driver leaning out of their van"
+        image="/images/driver-screen.png"
       />
 
       {/* Why drive */}
