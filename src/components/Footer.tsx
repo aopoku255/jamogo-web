@@ -4,6 +4,7 @@ import { Container } from "./Container";
 import { CookiePreferencesButton } from "./CookiePreferencesButton";
 import { FOOTER_LINKS } from "@/data/nav";
 import { SITE } from "@/lib/site";
+import { LinkedInIcon } from "./icons";
 
 export function Footer() {
   return (
@@ -17,6 +18,15 @@ export function Footer() {
           {/* <p className="mt-4 text-sm font-medium text-jamogo-green-600">
             Made for Ghana 🇬🇭
           </p> */}
+          <a
+            href={SITE.social.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Jamogo on LinkedIn"
+            className="mt-5 inline-flex h-9 w-9 items-center justify-center rounded-full bg-jamogo-gray-100 text-jamogo-gray-500 transition-colors hover:bg-jamogo-green-100 hover:text-jamogo-green-600"
+          >
+            <LinkedInIcon />
+          </a>
         </div>
 
         <div>

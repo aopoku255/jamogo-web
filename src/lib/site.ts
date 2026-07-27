@@ -9,6 +9,9 @@ export const SITE = {
     privacy: "privacy@jamogo.hoveritx.com",
     legal: "legal@jamogo.hoveritx.com",
   },
+  social: {
+    linkedin: "https://www.linkedin.com/company/jamogo/",
+  },
 } as const;
 
 export const DRIVER_MAILTO =

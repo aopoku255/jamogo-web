@@ -52,6 +52,15 @@ export const viewport = {
   themeColor: "#1FA84C",
 };
 
+const ORGANIZATION_JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: SITE.name,
+  url: SITE.domain,
+  description: SITE.description,
+  sameAs: [SITE.social.linkedin],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -60,6 +69,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${poppins.variable} ${inter.variable}`}>
       <body className="flex min-h-screen flex-col font-sans antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(ORGANIZATION_JSON_LD) }}
+        />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
