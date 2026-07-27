@@ -2,7 +2,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { Container } from "@/components/Container";
 import { Pill } from "@/components/Pill";
-import { ImagePlaceholder } from "@/components/ImagePlaceholder";
 import { SectionHeading } from "@/components/SectionHeading";
 import { FeatureCard } from "@/components/FeatureCard";
 import { FaqAccordion } from "@/components/FaqAccordion";
@@ -246,11 +245,18 @@ export default function Home() {
               In-app wallet, no cash handling
             </div>
           </div>
-          <ImagePlaceholder
-            width={960}
-            height={640}
-            label="Screenshot - in-app wallet and mobile money top-up flow"
-          />
+          <div
+            className="relative w-full overflow-hidden rounded-2xl"
+            style={{ aspectRatio: "960 / 640" }}
+          >
+            <Image
+              src="/images/wallet.png"
+              alt="Screenshot - in-app wallet and mobile money top-up flow"
+              fill
+              className="object-cover"
+              sizes="(min-width: 768px) 480px, 100vw"
+            />
+          </div>
         </Container>
       </section>
 
